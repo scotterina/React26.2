@@ -5,11 +5,9 @@ function TodoList({ todoList, onCompleteTodo }) {
     (todo) => todo.isCompleted === false,
   );
 
-  if (filteredTodoList.length === 0) {
-    return <p>Add todo above to get started</p>;
-  }
-
-  return (
+  return filteredTodoList.length === 0 ? (
+    <p>Add todo above to get started</p>
+  ) : (
     <ul>
       {filteredTodoList.map((todo) => (
         <TodoListItem

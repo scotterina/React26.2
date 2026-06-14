@@ -78,7 +78,7 @@ function TodosPage() {
       } catch (error) {
         const isFilterError =
           debouncedFilterTerm ||
-          sortBy !== "creationDate" ||
+          sortBy !== "createdDate" ||
           sortDirection !== "desc";
 
         dispatch({

@@ -73,9 +73,7 @@ export function todoReducer(state, action) {
       return {
         ...state,
         todoList: state.todoList.map((todo) =>
-          todo.id === action.payload.tempTodo.id
-            ? action.payload.savedTodo
-            : todo,
+          todo.id === action.payload.tempId ? action.payload.savedTodo : todo,
         ),
         dataVersion: state.dataVersion + 1,
       };
@@ -171,7 +169,7 @@ export function todoReducer(state, action) {
         ...state,
         filterTerm: "",
         sortBy: "creationDate",
-        sortDirection: "desc",
+        sortDirection: "asc",
         filterError: "",
       };
 

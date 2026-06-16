@@ -15,6 +15,7 @@ import {
   TODO_ACTIONS,
 } from "../reducers/todoReducer";
 import { useSearchParams } from "react-router";
+import { StatusFilter } from "../shared/StatusFilter";
 
 function TodosPage() {
   const { token } = useAuth();
@@ -282,6 +283,8 @@ function TodosPage() {
           })
         }
       />
+
+      <StatusFilter />
 
       <FilterInput
         filterTerm={filterTerm}

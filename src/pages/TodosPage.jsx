@@ -15,7 +15,7 @@ import {
   TODO_ACTIONS,
 } from "../reducers/todoReducer";
 import { useSearchParams } from "react-router";
-import { StatusFilter } from "../shared/StatusFilter";
+import StatusFilter from "../shared/StatusFilter";
 
 function TodosPage() {
   const { token } = useAuth();

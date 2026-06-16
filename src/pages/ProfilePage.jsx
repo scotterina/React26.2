@@ -18,7 +18,7 @@ function ProfilePage() {
 
         const response = await fetch("/api/tasks", {
           headers: {
-            "X-CSRF-Token": token,
+            "X-CSRF-TOKEN": token,
           },
           credentials: "include",
         });

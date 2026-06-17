@@ -1,10 +1,25 @@
+html,
+body,
+#root {
+  min-height: 100%;
+  height: auto;
+}
+
 body {
   margin: 0;
   background-color: white;
   font-family: "Inter", sans-serif;
   color: #111827;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#root {
+  overflow: visible;
 }
 
+* {
+  box-sizing: border-box;
+}
 h1,
 h2,
 h3,

@@ -344,14 +344,16 @@ function TodosPage() {
 
         <TodoForm onAddTodo={addTodo} />
 
-        <TodoList
-          todoList={todoList}
-          onCompleteTodo={completeTodo}
-          onUpdateTodo={updateTodo}
-          onDeleteTodo={deleteTodo}
-          dataVersion={dataVersion}
-          statusFilter={statusFilter}
-        />
+        <section className={styles.todoPanel}>
+          <TodoList
+            todoList={todoList}
+            onCompleteTodo={completeTodo}
+            onUpdateTodo={updateTodo}
+            onDeleteTodo={deleteTodo}
+            dataVersion={dataVersion}
+            statusFilter={statusFilter}
+          />
+        </section>
       </section>
     </main>
   );

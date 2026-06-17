@@ -1,0 +1,151 @@
+.page {
+  min-height: calc(100vh - 120px);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  background-color: #fffdf2;
+  background-image:
+    linear-gradient(#dbeafe 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 68, 68, 0.35) 1px, transparent 1px);
+  background-size:
+    100% 32px,
+    80px 100%;
+  background-position:
+    0 24px,
+    56px 0;
+}
+
+.pageHeader {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+
+  border-radius: 16px;
+  background-color: #fef3c7;
+  border: 1px solid #f59e0b;
+
+  box-shadow: 6px 6px 0 #fde68a;
+}
+
+.heading {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.description {
+  margin-top: 0.5rem;
+  color: #4b5563;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  background-color: white;
+  box-shadow: 5px 5px 0 #fde047;
+}
+
+.todoPanel {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.5rem;
+
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 40px rgba(17, 24, 39, 0.08);
+}
+
+.errorBox {
+  margin-bottom: 1rem;
+  padding: 1rem;
+
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+
+  background-color: #fff5f5;
+}
+
+.error {
+  margin-top: 0;
+  color: red;
+  font-weight: 700;
+}
+
+.loading {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.button,
+.secondaryButton {
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+
+  border-radius: 10px;
+  border: 1px solid #111827;
+
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.button {
+  background-color: #111827;
+  color: white;
+}
+
+.secondaryButton {
+  background-color: white;
+  color: #111827;
+}
+
+.button:hover,
+.secondaryButton:hover {
+  transform: translateY(-1px);
+}
+
+.button:focus,
+.secondaryButton:focus {
+  outline: 3px solid #9ca3af;
+  outline-offset: 2px;
+}
+
+@media (max-width: 800px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .page {
+    padding: 1rem;
+    padding-bottom: 5rem;
+    min-height: 100vh;
+  }
+
+  .todoPanel,
+  .controls {
+    padding: 1rem;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+  }
+}

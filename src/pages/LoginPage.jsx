@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router";
 import { useAuth } from "../contexts/AuthContext";
+import styles from "./LoginPage.module.css";
 
 function LoginPage() {
   const { login, isAuthenticated } = useAuth();
@@ -37,39 +38,41 @@ function LoginPage() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Log On</h2>
+    <main className={styles.LoginPage}>
+      <form className={styles.loginCard} onSubmit={handleSubmit}>
+        <h2>Log On</h2>
 
-      {authError && <p>{authError}</p>}
+        {authError && <p>{authError}</p>}
 
-      <div>
-        <label htmlFor="email">Email</label>
+        <div>
+          <label htmlFor="email">Email</label>
 
-        <input
-          id="email"
-          type="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          required
-        />
-      </div>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            required
+          />
+        </div>
 
-      <div>
-        <label htmlFor="password">Password</label>
+        <div>
+          <label htmlFor="password">Password</label>
 
-        <input
-          id="password"
-          type="password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-          required
-        />
-      </div>
+          <input
+            id="password"
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            required
+          />
+        </div>
 
-      <button type="submit" disabled={isLoggingOn}>
-        {isLoggingOn ? "Logging in..." : "Log On"}
-      </button>
-    </form>
+        <button type="submit" disabled={isLoggingOn}>
+          {isLoggingOn ? "Logging in..." : "Log On"}
+        </button>
+      </form>
+    </main>
   );
 }
 

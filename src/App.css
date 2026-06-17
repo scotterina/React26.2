@@ -1,0 +1,35 @@
+html,
+body,
+#root {
+  min-height: 100%;
+  height: auto;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  font-family: "Inter", sans-serif;
+  color: #111827;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#root {
+  overflow: visible;
+}
+
+* {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+}

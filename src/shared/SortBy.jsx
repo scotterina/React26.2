@@ -6,7 +6,7 @@ function SortBy({
 }) {
   return (
     <div>
-      <label htmlFor="sortBy">Sort By</label>
+      <label htmlFor="sortBy">Sort By: </label>
       <select
         id="sortBy"
         value={sortBy}
@@ -16,7 +16,7 @@ function SortBy({
         <option value="title">Title</option>
       </select>
 
-      <label htmlFor="sortDirection">Order</label>
+      <label htmlFor="sortDirection">Order: </label>
       <select
         id="sortDirection"
         value={sortDirection}

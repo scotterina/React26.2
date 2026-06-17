@@ -1,0 +1,32 @@
+.header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: white;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  font-family: "Syne", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userInfo {
+  margin-top: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: #4b5563;
+}

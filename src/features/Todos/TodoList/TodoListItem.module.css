@@ -1,0 +1,30 @@
+.checkbox {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #111827;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+}
+
+.checkbox::before {
+  content: "✓";
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+
+.checkbox:checked {
+  background-color: #facc15;
+  border-color: #111827;
+}
+
+.checkbox:checked::before {
+  transform: scale(1);
+  color: #111827;
+}

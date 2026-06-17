@@ -1,0 +1,71 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.heading {
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.loading {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 1rem;
+}
+
+.error {
+  color: red;
+  font-weight: 600;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+
+  background-color: #fafafa;
+}
+
+.statNumber {
+  font-family: "Syne", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  .page {
+    padding: 1rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}

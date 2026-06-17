@@ -1,10 +1,11 @@
 import { useState } from "react";
 import TextInputWithLabel from "../../../shared/TextInputWithLabel";
 import { isValidTodoTitle } from "../../../utils/todoValidation";
+import styles from "./TodoListItem.module.css";
+import DOMPurify from "dompurify";
 
-function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
+function TodoListItem({ todo, onCompleteTodo, onUpdateTodo, onDeleteTodo }) {
   const [isEditing, setIsEditing] = useState(false);
-
   const [workingTitle, setWorkingTitle] = useState(todo.title);
 
   function handleEdit(event) {
@@ -17,14 +18,26 @@ function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
   }
 
   function handleUpdate(event) {
+    event.preventDefault();
+
     if (!isEditing) {
       return;
     }
-    event.preventDefault();
+
+    const trimmedTitle = workingTitle.trim();
+
+    if (!trimmedTitle || trimmedTitle.length > 100) {
+      return;
+    }
+
+    const cleanTitle = DOMPurify.sanitize(trimmedTitle, {
+      ALLOWED_TAGS: [],
+      ALLOWED_ATTR: [],
+    });
 
     onUpdateTodo({
       ...todo,
-      title: workingTitle,
+      title: cleanTitle,
     });
 
     setIsEditing(false);
@@ -40,6 +53,7 @@ function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
               labelText="Edit Todo"
               value={workingTitle}
               onChange={handleEdit}
+              maxLength={100}
             />
 
             <button type="button" onClick={handleCancel}>
@@ -54,6 +68,7 @@ function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
           <>
             <label>
               <input
+                className={styles.checkbox}
                 type="checkbox"
                 checked={todo.isCompleted}
                 onChange={() => onCompleteTodo(todo.id)}
@@ -61,6 +76,7 @@ function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
             </label>
 
             <span onClick={() => setIsEditing(true)}>{todo.title}</span>
+            <button onClick={() => onDeleteTodo(todo.id)}>Delete</button>
           </>
         )}
       </form>

@@ -42,7 +42,7 @@ Getting Started
 Prerequisites
 Before running this project, install: + Node.js + npm
 Clone the repository:
-git clone <repository-url>
+git clone <https://github.com/scotterina/React26.2>
 Navigate to the project directory:
 cd todos
 Install dependencies:

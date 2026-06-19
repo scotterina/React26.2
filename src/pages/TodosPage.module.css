@@ -3,17 +3,6 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem;
-
-  background-color: #fffdf2;
-  background-image:
-    linear-gradient(#dbeafe 1px, transparent 1px),
-    linear-gradient(90deg, rgba(239, 68, 68, 0.35) 1px, transparent 1px);
-  background-size:
-    100% 32px,
-    80px 100%;
-  background-position:
-    0 24px,
-    56px 0;
 }
 
 .pageHeader {

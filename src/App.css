@@ -12,14 +12,21 @@ body {
   color: #111827;
   overflow-x: hidden;
   overflow-y: auto;
+  background-color: #fffdf2;
+  background-image:
+    linear-gradient(#dbeafe 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 68, 68, 0.35) 1px, transparent 1px);
+  background-size:
+    100% 32px,
+    80px 100%;
+  background-position:
+    0 24px,
+    56px 0;
 }
 #root {
   overflow: visible;
 }
 
-* {
-  box-sizing: border-box;
-}
 h1,
 h2,
 h3,
